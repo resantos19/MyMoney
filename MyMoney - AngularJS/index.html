@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    
+    <title>MyMoney</title>
+</head>
+
+<body>
+    <section id="index" data-role="page">
+        <section data-role="header">
+            <section data-role="navbar" >
+               <img src="css/icons/icon_60.png" <h4>MyMoney</h4>
+            </section>
+         </section> 
+         <section data-role="content">
+            <section data-role="navbar"></section>
+            <ul data-role="listview" data-inset="true" data-position="fixed">
+                <li><a href="receitas.html" data-transition="flow">Recebimentos</a></li>
+                <li><a href="despesas.html">Despesas do Mês</a></li>
+                <li><a href="saldo.html">Saldo</a></li>
+                <li><a href="#">Lançamentos Futuros</a></li>
+            </ul>
+         </section>
+    </section>
+
+    <script src="js/lib/jquery-1.11.1.min.js"></script>
+    <script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/lib/angular.min.js"></script>
+</body>
+</html>

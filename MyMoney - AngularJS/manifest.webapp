@@ -1,0 +1,19 @@
+{
+  "name": "My Money",
+  "version": "1.0",
+  "description": "Controle financeiro pessoal",
+  "launch_path": "/index.html",
+  "permissions": {
+    "storage": {
+      "description": " "
+    }
+  },
+  "developer": {
+    "name": "Alex Silva e Renato Peres",
+    "url": ""
+  },
+  "icons": {
+    "60": "/css/icons/icon_60.png",
+    "128": "/css/icons/icon_128.png"
+  }
+}

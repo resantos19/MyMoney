@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>MyMoney - Receitas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <section id="receitas" data-role="page">
+         <section data-role="header">
+            <section data-role="navbar">
+                <h3> Total: R$ <span id="totalReceita"></span> </h3><span>ADD</span>
+            </section>          
+         </section>
+    
+<!--
+    <section data-role="content">
+    	<form id="novaReceita">
+            <fieldset>
+                <input type="date" ng-model="data" placeholder"Data" required />
+                <input type="text" ng-model="descricaoReceita" placeholder="Descricao Receita" required>
+                <input type="number" ng-model="valorReceita" placeholder="Valor da Receita" required>
+                
+                <button ng-click="">Salvar</button>
+      <ul>
+        <li ng-repeat="who in names" ng-click="remove(who)">{{who}}</li>
+      </ul>      
+
+            </fieldset>
+        </form>
+      <section class="widget-content">
+
+        <table class="table table-striped table-bordered table-hover" id="tabelaReceita">
+        	<thead>
+        		<tr>
+        			<th>Id</th>
+	        		<th>Data</th>
+	        		<th>Descrição</th>
+	        		<th>Valor</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        	
+
+        	</tbody>
+        </table>
+         </section>
+        </section>
+         <section data-position="fixed">
+                <ul>
+                    <li><a href="#" class="ui-btn" data-rel="back">Voltar</a></li>
+                </ul> 
+         </section>    
+    </section>
+-->
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/receitas.js"></script>
+
+</body>
+
+</html>
