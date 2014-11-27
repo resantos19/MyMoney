@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>MyMoney - Receitas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+</head>
+
+<body>
+    <div id="index" data-role="page">
+         <div data-role="header">
+            <div data-role="navbar">
+                <h2> Total: R$ <span id="valor">    </span> </h2>
+            </div>          
+         </div>
+         <div data-role="content">
+
+        <fieldset>
+            <label>
+                Descricao receita:
+                <input type="text" id="nomeReceita">
+            </label>
+            <label>
+                Valor receita:
+                <input type="price" id="valorReceita">
+            </label>
+
+            <input type="button" id="btnSalvar"  value="Salvar"/>
+
+        </fieldset>
+         </div>
+        
+         <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="ui-btn" data-rel="back">Voltar</a></li>
+                    <li><a href="#">Editar6</a></li>
+                </ul> 
+             </div>
+         </div>    
+    </div>
+<script src="js/angular.min.js"></script>
+</body>
+
+</html>
