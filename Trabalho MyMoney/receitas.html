@@ -5,7 +5,10 @@
     <title>MyMoney - Receitas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="style/bootstrap.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
 </head>
@@ -18,32 +21,55 @@
             </div>          
          </div>
          <div data-role="content">
-
+	<form id="novaReceita">
         <fieldset>
             <label>
+                Data:
+                <input type="date" id="dataReceita">
+            </label>
+
+            <label>
                 Descricao receita:
-                <input type="text" id="nomeReceita">
+                <input type="text" id="nomeReceita" required="required">
             </label>
             <label>
                 Valor receita:
-                <input type="price" id="valorReceita">
+                <input type="number" id="valorReceita" required="required">
             </label>
 
-            <input type="button" id="btnSalvar"  value="Salvar"/>
+            <button id="btnSalvar">Salvar</button>
+            <button id="btnAtualizar">Atualizar</button>
+            <button id="btnExcluir">Excluir</button>
+            
 
         </fieldset>
+    </form>
+      <div class="widget-content">
+
+        <table class="table table-striped table-bordered table-hover" id="tabelaReceita">
+        	<thead>
+        		<tr>
+        			<th>Id</th>
+	        		<th>Data</th>
+	        		<th>Descrição</th>
+	        		<th>Valor</th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        	
+
+        	</tbody>
+        </table>
          </div>
-        
-         <div data-role="footer" data-position="fixed">
-             <div data-role="navbar">
+        </div>
+         <div data-position="fixed">
                 <ul>
                     <li><a href="#" class="ui-btn" data-rel="back">Voltar</a></li>
-                    <li><a href="#">Editar6</a></li>
                 </ul> 
-             </div>
          </div>    
     </div>
-<script src="js/angular.min.js"></script>
+<script src="js/receitas.js"></script>
+
 </body>
 
 </html>
