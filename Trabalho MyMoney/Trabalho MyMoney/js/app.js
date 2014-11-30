@@ -1,3 +1,4 @@
+var app = angular.module('MyMoney', []);
 /**
  * This is a simple Memo app for Firefox OS
  */
