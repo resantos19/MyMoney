@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="MyMoney">
+<head>
+    <meta charset="UTF-8">
+    <title>MyMoney</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/bootstrap.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+</head>
+
+<body>
+    <div id="index" data-role="page">
+         <div data-role="content" ng-controller="RegistroController">
+            <div data-role="navbar"></div>
+            <ul data-role="listview" data-inset="true" data-position="fixed">
+                <li><a href="registros.html?receitas">Receitas</a></li>
+                <li><a href="registros.html?despesas">Despesas</a></li>
+                <li><a href="registros.html?saldo">Saldo</a></li>
+            </ul>
+         </div>     
+    </div>
+
+<script src="js/lib/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller/RegistroController.js"></script>
+<script src="js/service/RegistroService.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+<script>
+	$("a").bind("click", function(e){
+		e.preventDefault();
+		var link = this.href;
+		window.location = link;
+	});
+</script>
+</body>
+</html>
