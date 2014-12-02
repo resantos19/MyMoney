@@ -1,3 +1,8 @@
+
+body{
+	background: #ffffff !important;
+}
+
 .table{
 	margin: 0px;
 	width: 100%;
@@ -38,7 +43,4 @@
 .linhaDespesa{
    		color: #f52312;
    	}
-body{
-	background: #ffffff;
-}
-.
+
