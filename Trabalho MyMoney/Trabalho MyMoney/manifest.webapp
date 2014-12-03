@@ -1,0 +1,19 @@
+{
+  "name": "My Money",
+  "version": "1.0",
+  "description": "Controle financeiro pessoal",
+  "launch_path": "/index.html",
+  "permissions": {
+    "storage": {
+      "description": "Aplicativo para controle financeiro pessoal "
+    }
+  },
+  "developer": {
+    "name": "Alex Silva e Renato Peres",
+    "url": "www.rlcsolucoes.com.br/mymoney"
+  },
+  "icons": {
+    "60": "/style/icons/logo60.png",
+    "128": "/style/icons/logo128.png"
+  }
+}
