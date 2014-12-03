@@ -4,27 +4,35 @@ app.factory('RegistroService', function($window){
 		ns = {};
 		total = 0;
 
-	var choseSomebody = function() {
-		return $window.parseInt(Math.random() * names.length);
-	};
-
-	var persistNames = function() {
-		$window.localStorage.setItem('registros', JSON.stringify(registros));
+	var persistNames = function(tipo) {
+		if(tipo == "Receitas")
+			$window.localStorage.setItem('receitas', JSON.stringify(registros));
+		else if(tipo == "Despesas")
+			$window.localStorage.setItem('despesas', JSON.stringify(registros));
 	};
 
 	ns.addRegistro = function(name, date, value, tipo) {
 		var novo = JSON.stringify({Data: date, Nome: name, Valor: value , Tipo: tipo});
 		registros.push(novo);
-		persistNames();
+		persistNames(tipo);
 	};
 
-	ns.setTipo = function(tipoDeRegistro){
-		var tipo = tipoDeRegistro;
-	};
 	ns.getNames = function(tipo) {
-		var retrivedNames = JSON.parse(
-			$window.localStorage.getItem('registros')
-		);
+		
+		var retrivedNames = [];
+		
+		if(tipo == "Receitas"){
+			retrivedNames = JSON.parse($window.localStorage.getItem('receitas'));
+		}
+		else if(tipo == "Despesas"){
+			retrivedNames = JSON.parse($window.localStorage.getItem('despesas'));
+		}
+		else {
+			var receitasAux = JSON.parse($window.localStorage.getItem('receitas'));
+			var despesasAux = JSON.parse($window.localStorage.getItem('despesas'));
+			retrivedNames = receitasAux.concat(despesasAux);
+		}
+
 		
 		if(retrivedNames && retrivedNames.length > 0) {
 			registros = retrivedNames;
@@ -44,15 +52,24 @@ app.factory('RegistroService', function($window){
 			}
 		}
 		
+	
 		return registrosMatriz;
+
 	};
 
 
 	ns.getTotal = function(tipo){
-		
-		var retrivedNames = JSON.parse(
-			$window.localStorage.getItem('registros')
-		);
+
+		var retrivedNames = [];
+		if(tipo == "Receitas")
+			retrivedNames = JSON.parse($window.localStorage.getItem('receitas'));
+		else if(tipo == "Despesas")
+			retrivedNames = JSON.parse($window.localStorage.getItem('despesas'));
+		else {
+			var receitasAux = JSON.parse($window.localStorage.getItem('receitas'));
+			var despesasAux = JSON.parse($window.localStorage.getItem('despesas'));
+			retrivedNames = receitasAux.concat(despesasAux);
+		}
 		
 		if(retrivedNames && retrivedNames.length > 0) {
 			registros = retrivedNames;
@@ -81,35 +98,29 @@ app.factory('RegistroService', function($window){
 		return valor;
 		
 	}
-	ns.remove = function(name) {
+	
+	ns.remove = function(name, tipo) {
 		if(name !== -1) {
 			registros.splice(name, 1);
-			persistNames();
+			persistNames(tipo);
 		}
 	};
 	
-	ns.update = function(index, name, date, value) {
+	ns.update = function(index, name, date, value, tipo) {
 		
-		var novo = JSON.stringify({Data: date, Nome: name, Valor: value });
+		var novo = JSON.stringify({Data: date, Nome: name, Valor: value, Tipo: tipo });
 		
 		
 		if(index !== -1) {
 			registros.splice(index, 1, novo);
-			persistNames();
+			persistNames(tipo);
 		}
 	};
 
-	ns.buscarRegistro = function(name) {
+	ns.buscarRegistro = function(name, tipo) {
 		var index = registros[name];
 		return JSON.parse(index);
 	};
 	
-	ns.whoWillPay = function() {
-		if(names.length > 0) {
-			return names[choseSomebody()];
-		}
-		return "You will pay!";
-	};
-
 	return ns;
 });

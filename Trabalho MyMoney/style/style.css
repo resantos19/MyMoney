@@ -1,6 +1,6 @@
-
-body{
-	background: #ffffff !important;
+body {
+	
+	background: #F0F0F0;
 }
 
 .table{
@@ -36,6 +36,25 @@ body{
 	border-radius: 0px;
 }
 
+#btnSalvar, #btnVoltar, #btnAtualizar, #btnExcluir{
+	padding: 3px;
+	margin-top: 0;
+	width: 50%;
+	height: 34px;
+	font-size: 12px;
+	background-color: #fff;
+	float: left;
+}
+
+
+#btnVoltar2{
+	margin-top: 76%;
+	width: 100%;
+	height: 34px;
+	font-size: 12px;
+	background-color: #fff;
+	float: left;
+}
 
 .linhaReceita{
    		color: #0006ff;
@@ -43,4 +62,3 @@ body{
 .linhaDespesa{
    		color: #f52312;
    	}
-

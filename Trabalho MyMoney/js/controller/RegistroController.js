@@ -16,12 +16,14 @@ app.controller('RegistroController', function($scope, $window, RegistroService){
 	    }else{
 	    	$scope.tipo = "";
 	    	$scope.formulario = false;
+	    	$scope.btnVoltar2 = true;
 	    }
 
-		//$('#btnAtualizar').hide();
 		$scope.btnAtualizar = false;
 		$scope.btnExcluir = false;
 		$scope.btnSalvar = true;
+		$scope.btnVoltar = true;
+	
 		
 		$scope.registros = RegistroService.getNames($scope.tipo);		
 		$scope.total = RegistroService.getTotal($scope.tipo);
@@ -46,14 +48,14 @@ app.controller('RegistroController', function($scope, $window, RegistroService){
 
 	$scope.remove = function() {
 		if($window.confirm('Remover o registro selecionado?')) {
-			RegistroService.remove(indexClicado);
+			RegistroService.remove(indexClicado, $scope.tipo);
 			iniciar();
 		}
 	}
 	
 	$scope.update = function() {
 		if($window.confirm('Atualizar o registro selecionado?')) {
-			RegistroService.update(indexClicado, $scope.name, $scope.date, $scope.value);
+			RegistroService.update(indexClicado, $scope.name, $scope.date, $scope.value, $scope.tipo);
 			iniciar();
 			
 		}
@@ -65,8 +67,9 @@ app.controller('RegistroController', function($scope, $window, RegistroService){
 		$scope.btnAtualizar = true;
 		$scope.btnExcluir = true;
 		$scope.btnSalvar = false;
-
+		$scope.btnVoltar = false;
 		
+
 		var linha = RegistroService.buscarRegistro(index);
 		
 		$scope.name = linha.Nome;
@@ -74,6 +77,10 @@ app.controller('RegistroController', function($scope, $window, RegistroService){
 		$scope.value = linha.Valor;
 		
 		indexClicado = index;
-		
 	}
+
+	$scope.redirect = function(){
+		window.location = "index.html";
+	}
+
 });
